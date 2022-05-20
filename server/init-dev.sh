@@ -4,14 +4,13 @@ set -e
 if [ "${DEBUG}" = "true" ]; then
   set -x
 fi
-shopt -s extglob
 steam_dir="${work_dir}/Steam"
 server_dir="${work_dir}/server"
 server_installed_lock_file="${server_dir}/installed.lock"
 csgo_dir="${server_dir}/csgo"
 csgo_custom_files_dir="${CSGO_CUSTOM_FILES_DIR-"/usr/csgo"}"
 
-install_steam() {
+install_steamcmd() {
   cd $steam_dir
   echo "安装Steamcmd"
   echo "Steamcmd目录："$steam_dir
@@ -190,7 +189,7 @@ install_or_update() {
     install
   fi
 }
-
+# echo 1
 # if [ ! -z $1 ]; then
 #   $1
 # else
@@ -200,4 +199,4 @@ install_or_update() {
 #   sync_custom_files
 #   start
 # fi
-clear
+# clear

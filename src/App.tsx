@@ -1,13 +1,15 @@
 import React from 'react';
 import WebTerminal from './Terminal';
 import './App.css';
+import { SocketProvider } from './SocketProvider';
 
 function App() {
   return (
-    <div className="App">
-
-      <WebTerminal />
-    </div>
+    <SocketProvider>
+      <div className="App">
+        <WebTerminal />
+      </div>
+    </SocketProvider>
   );
 }
 
